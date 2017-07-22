@@ -20,13 +20,13 @@ PHP Server Monitor is a script that checks whether your websites and servers are
 
 | Variable | Type | Default value |
 | -------- | ---- | ------------- |
-| **PSM_BASE_URL** | *required* | 
-| **PSM_DB_HOST** | *required* | 
+| **PSM_BASE_URL** | *required* | null
+| **PSM_DB_HOST** | *required* | null
 | **PSM_DB_PORT** | *optional* | 3306
-| **PSM_DB_NAME** | *required* | 
-| **PSM_DB_USER** | *required* | 
-| **PSM_DB_PASS** | *required* | 
-| **PSM_DB_PREFIX** | *required* | 
+| **PSM_DB_NAME** | *required* | null
+| **PSM_DB_USER** | *required* | null
+| **PSM_DB_PASS** | *required* | null
+| **PSM_DB_PREFIX** | *required* | null
 | **PHP_TIMEZONE** | *optional* | UTC
 | **PHP_MEMORY_LIMIT** | *optional* | 256M
 | **MAX_UPLOAD** | *optional* | 128M
@@ -72,3 +72,9 @@ services:
   ports:
    - 80:80
 ```
+
+### Source
+* Image Github: https://github.com/bpodwinski/docker-phpservermon
+* PHP Server Monitor Github: https://github.com/phpservermon/phpservermon
+* PHP Server Monitor Website: http://www.phpservermonitor.org/
+* Fork https://github.com/invartam/Docker-PHPServerMon

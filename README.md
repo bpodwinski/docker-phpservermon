@@ -8,7 +8,7 @@ PHP Server Monitor is a script that checks whether your websites and servers are
 
 ### Features
 
-- Based on Alpine
+- Based on Alpine (>50MB!)
 - Latest stable versions
 - With nginx and PHP7.1
 
@@ -20,12 +20,55 @@ PHP Server Monitor is a script that checks whether your websites and servers are
 
 | Variable | Type | Default value |
 | -------- | ---- | ------------- |
+| **PSM_BASE_URL** | *required* | 
+| **PSM_DB_HOST** | *required* | 
+| **PSM_DB_PORT** | *optional* | 3306
+| **PSM_DB_NAME** | *required* | 
+| **PSM_DB_USER** | *required* | 
+| **PSM_DB_PASS** | *required* | 
+| **PSM_DB_PREFIX** | *required* | 
 | **PHP_TIMEZONE** | *optional* | UTC
 | **PHP_MEMORY_LIMIT** | *optional* | 256M
 | **MAX_UPLOAD** | *optional* | 128M
-| **PSM_DB_PORT** | *optional* | 3306
-| **UPDATE_INTERVAL** | *optional* | 30
 
 ### Volumes
 
 No volume required!
+
+### Example Docker Compose configuration
+
+```
+version: "3"
+services:
+
+ db:
+  image: mariadb:10
+  container_name: phpservermon-mariadb
+  hostname: mariadb
+  restart: always
+  volumes:
+   - ./mariadb:/var/lib/mysql
+  environment:
+   - MYSQL_ROOT_PASSWORD=password
+   - MYSQL_DATABASE=phpservermon
+   - MYSQL_USER=phpservermon
+   - MYSQL_PASSWORD=password
+
+ phpservermon:
+  image: benoitpodwinski/phpservermon
+  container_name: phpservermon
+  hostname: phpservermon
+  restart: always
+  environment:
+   - PSM_BASE_URL=http://website.com/
+   - PSM_DB_HOST=db
+   - PSM_DB_NAME=phpservermon
+   - PSM_DB_USER=phpservermon
+   - PSM_DB_PASS=password
+   - PSM_DB_PREFIX=Y8ze_
+   - PHP_TIMEZONE=Europe/Paris
+  depends_on:
+   - db
+  ports:
+   - 80:80
+```

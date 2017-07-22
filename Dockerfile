@@ -12,7 +12,7 @@ RUN mkdir /logs /run/nginx
 WORKDIR /var/www
 
 RUN apk add --no-cache --update libxml2-dev curl-dev supervisor nginx curl git \
-	&& docker-php-ext-install mysqli pdo_mysql curl xml \
+	&& docker-php-ext-install mysqli pdo_mysql curl xml sockets \
 	&& rm -rf /var/www/* \
     && git clone https://github.com/phpservermon/phpservermon.git ./ \
     && php composer.phar install \

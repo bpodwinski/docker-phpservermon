@@ -19,15 +19,15 @@ RUN apk add --no-cache --update libxml2-dev curl-dev supervisor nginx curl git \
     && rm -rf Makefile Vagrantfile composer* .git \
     && apk del --purge git libxml2-dev curl-dev
 
-COPY supervisord.conf /etc/
-COPY nginx.conf /etc/nginx/
-COPY update_status.sh /usr/local/bin/
-COPY php.ini /usr/local/etc/php/
-COPY docker-entrypoint.sh /
+COPY supervisord.conf /etc/supervisord.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY update_status.sh /usr/local/bin/update_status.sh
+COPY php.ini /usr/local/etc/php/php.ini
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN chmod +x /docker-entrypoint.sh \
 	&& chmod +x /usr/local/bin/update_status.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-EXPOSE 80 443
+EXPOSE 80

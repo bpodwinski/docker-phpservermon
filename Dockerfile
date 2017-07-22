@@ -7,7 +7,7 @@ ENV MAX_UPLOAD 128M
 ENV PSM_DB_PORT 3306
 ENV UPDATE_INTERVAL 30
 
-RUN mkdir /run/nginx
+RUN mkdir /logs /run/nginx
 
 WORKDIR /var/www
 

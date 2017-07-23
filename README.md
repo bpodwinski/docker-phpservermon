@@ -30,6 +30,7 @@ PHP Server Monitor is a script that checks whether your websites and servers are
 | **PHP_TIMEZONE** | *optional* | UTC
 | **PHP_MEMORY_LIMIT** | *optional* | 256M
 | **MAX_UPLOAD** | *optional* | 128M
+| **UPDATE_INTERVAL** | *optional* | 300
 
 ### Volumes
 

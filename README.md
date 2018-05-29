@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
-`stable` [*(bpodwinski/docker-phpservermon)*](https://github.com/bpodwinski/docker-phpservermon)
+`v3.3.0` [*(bpodwinski/docker-phpservermon/v3.3.0)*](https://github.com/bpodwinski/docker-phpservermon/tree/v3.3.0)
 
 ### What is this ?
 

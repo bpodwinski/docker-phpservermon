@@ -3,6 +3,7 @@
 `latest`, `stable` [*(bpodwinski/docker-phpservermon)*](https://github.com/bpodwinski/docker-phpservermon)
 `3.3.0` [*(bpodwinski/docker-phpservermon/3.3.0)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.0)
 `3.3.1` [*(bpodwinski/docker-phpservermon/3.3.1)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.1)
+`3.3.2` [*(bpodwinski/docker-phpservermon/3.3.2)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.2)
 
 ### What is this ?
 

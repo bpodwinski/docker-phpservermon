@@ -10,7 +10,7 @@ ARG PHPSERVERMON_VER=3.4.5
 
 ADD https://github.com/phpservermon/phpservermon/archive/v${PHPSERVERMON_VER}.zip /tmp/phpservermon.zip
 
-RUN apk add --no-cache --update libxml2-dev curl-dev supervisor nginx curl \
+RUN apk add --no-cache --update libxml2-dev curl-dev supervisor nginx curl git \
 	&& docker-php-ext-install mysqli pdo_mysql curl xml sockets \
     && mkdir /logs /run/nginx \
 	&& rm -rf /var/www/* \
@@ -19,7 +19,8 @@ RUN apk add --no-cache --update libxml2-dev curl-dev supervisor nginx curl \
     && cp -r phpservermon-${PHPSERVERMON_VER}/* /var/www \
     && rm -rf phpservermon.zip phpservermon \
     && cd /var/www \
-    && apk del --purge libxml2-dev curl-dev
+    && php composer.phar install \
+    && apk del --purge libxml2-dev curl-dev git
 
 COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf

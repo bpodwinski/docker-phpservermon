@@ -20,7 +20,9 @@ RUN apk add --no-cache --update libxml2-dev curl-dev supervisor nginx curl git \
     && rm -rf phpservermon.zip phpservermon \
     && cd /var/www \
     && php composer.phar install \
-    && apk del --purge libxml2-dev curl-dev git
+    && apk del --purge libxml2-dev curl-dev git \
+    && sed -i -e "s/user = www-data/user = root/g" /usr/local/etc/php-fpm.d/www.conf \
+    && sed -i -e "s/group = www-data/group = root/g" /usr/local/etc/php-fpm.d/www.conf
 
 COPY supervisord.conf /etc/supervisord.conf
 COPY nginx.conf /etc/nginx/nginx.conf

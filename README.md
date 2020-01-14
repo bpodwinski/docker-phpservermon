@@ -1,10 +1,10 @@
 # Supported tags and respective `Dockerfile` links
 
-`latest`, `stable` [*(bpodwinski/docker-phpservermon)*](https://github.com/bpodwinski/docker-phpservermon) 
-`3.3.0` [*(bpodwinski/docker-phpservermon/3.3.0)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.0) 
-`3.3.1` [*(bpodwinski/docker-phpservermon/3.3.1)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.1) 
-`3.3.2` [*(bpodwinski/docker-phpservermon/3.3.2)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.2) 
-`3.4.5` [*(bpodwinski/docker-phpservermon/3.4.5)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.4.5)
+`latest`, `stable` [*(bpodwinski/docker-phpservermon)*](https://github.com/bpodwinski/docker-phpservermon)  
+`3.4.5` [*(bpodwinski/docker-phpservermon/3.4.5)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.4.5)  
+`3.3.2` [*(bpodwinski/docker-phpservermon/3.3.2)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.2)  
+`3.3.1` [*(bpodwinski/docker-phpservermon/3.3.1)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.1)  
+`3.3.0` [*(bpodwinski/docker-phpservermon/3.3.0)*](https://github.com/bpodwinski/docker-phpservermon/tree/3.3.0)
 
 ### What is this ?
 
@@ -14,7 +14,7 @@ PHP Server Monitor is a script that checks whether your websites and servers are
 
 - Based on Alpine (>50MB!)
 - Latest stable versions
-- With nginx and PHP7.1
+- With nginx and PHP7
 
 ### Ports
 

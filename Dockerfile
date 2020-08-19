@@ -6,7 +6,7 @@ ENV PHP_MEMORY_LIMIT 512M
 ENV MAX_UPLOAD 128M
 ENV PSM_DB_PORT 3306
 ENV UPDATE_INTERVAL 120
-ARG PHPSERVERMON_VER=3.5.0
+ARG PHPSERVERMON_VER=3.5.2
 
 ADD https://github.com/phpservermon/phpservermon/archive/v${PHPSERVERMON_VER}.zip /tmp/phpservermon.zip
 

@@ -1,0 +1,32 @@
+version: "3"
+services:
+
+ db:
+  image: mariadb:10
+  container_name: phpservermon-mariadb-build
+  hostname: mariadb
+  restart: always
+  environment:
+   - MYSQL_ROOT_PASSWORD=password
+   - MYSQL_DATABASE=phpservermon
+   - MYSQL_USER=phpservermon
+   - MYSQL_PASSWORD=password
+
+ phpservermon:
+  build: .
+  container_name: phpservermon-build
+  hostname: phpservermon
+  restart: always
+  environment:
+   - PSM_BASE_URL=
+   - PSM_DB_HOST=db
+   - PSM_DB_NAME=phpservermon
+   - PSM_DB_USER=phpservermon
+   - PSM_DB_PASS=password
+   - PSM_DB_PREFIX=H3ea_
+   - PHP_TIMEZONE=Europe/Paris
+   - UPDATE_INTERVAL=30
+  depends_on:
+   - db
+  ports:
+   - 8889:80

@@ -10,8 +10,8 @@ ARG PHPSERVERMON_VER=3.5.2
 
 ADD https://github.com/phpservermon/phpservermon/archive/v${PHPSERVERMON_VER}.zip /tmp/phpservermon.zip
 
-RUN apk add --no-cache --update libxml2-dev curl-dev supervisor nginx curl git \
-	&& docker-php-ext-install mysqli pdo_mysql curl xml sockets \
+RUN apk add --no-cache --update libxml2-dev supervisor nginx git \
+	&& docker-php-ext-install mysqli pdo_mysql sockets \
     && mkdir /logs /run/nginx \
 	&& rm -rf /var/www/* \
     && cd /tmp \
@@ -20,7 +20,7 @@ RUN apk add --no-cache --update libxml2-dev curl-dev supervisor nginx curl git \
     && rm -rf phpservermon.zip phpservermon \
     && cd /var/www \
     && php composer.phar install \
-    && apk del --purge libxml2-dev curl-dev git \
+    && apk del --purge libxml2-dev git \
     && sed -i -e "s/user = www-data/user = root/g" /usr/local/etc/php-fpm.d/www.conf \
     && sed -i -e "s/group = www-data/group = root/g" /usr/local/etc/php-fpm.d/www.conf
 
